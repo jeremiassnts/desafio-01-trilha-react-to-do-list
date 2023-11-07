@@ -1,0 +1,36 @@
+.container {
+    padding: 5rem 20vw;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list {
+
+}
+
+.noItems {
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noItems img {
+    width: 3rem;
+}
+
+.noItems span {
+    font-size: 0.875rem;
+    color: var(--gray-300);
+}
+
+.noItems span:first-of-type {
+    font-weight: bold;
+    margin-top: 1rem;
+}

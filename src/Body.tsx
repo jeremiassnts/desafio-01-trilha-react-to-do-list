@@ -1,4 +1,5 @@
 import styles from './Body.module.css'
+import { Panel } from './Panel'
 import plus from './assets/plus.svg'
 
 export function Body() {
@@ -9,5 +10,6 @@ export function Body() {
                 Criar <img src={plus} />
             </button>
         </div>
+        <Panel />
     </div>
 }

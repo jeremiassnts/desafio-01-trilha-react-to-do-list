@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    align-items: center;
+}
+
+.value {
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    font-size: 0.75rem;
+    padding: 0 0.5rem;
+    border-radius: 10px;
+    line-height: 1.1rem;
+}
