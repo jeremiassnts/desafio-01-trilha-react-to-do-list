@@ -1,0 +1,25 @@
+.container {
+    background-color: var(--gray-700);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 4rem 0;
+    gap: 0.5rem;
+}
+
+.container img {
+    height: 1.75rem;
+}
+
+.container div span {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.container div span:first-of-type {
+    color: var(--blue);
+}
+
+.container div span:last-of-type {
+    color: var(--purple-dark);
+}
