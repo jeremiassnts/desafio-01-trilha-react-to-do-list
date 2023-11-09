@@ -2,16 +2,16 @@
     background-color: var(--gray-500);
     width: 100%;
     border-radius: 5px;
-    padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 0.75rem;
 }
 
 .container input {
-    width: 1.3em;
-    height: 1.3em;
+    min-width: 1.3em;
+    min-height: 1.3em;
     border-radius: 50%;
     appearance: none;
     -webkit-appearance: none;
@@ -67,10 +67,23 @@
     cursor: pointer;
     transition: color 0.1s;
     padding: 2px;
+    min-width: 1.375rem;
 }
 
 .trash:hover {
     background-color: var(--gray-400);
     border-radius: 5px;
     color: var(--danger);
+}
+
+@media (max-width: 768px){
+    .container {
+        padding: 0.75rem;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        padding: 1rem;
+    }
 }

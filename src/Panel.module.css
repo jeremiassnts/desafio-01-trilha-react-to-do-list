@@ -1,5 +1,4 @@
 .container {
-    padding: 5rem 20vw;
     margin: 0 auto;
     width: 100%;
 }
@@ -36,4 +35,16 @@
 .noItems span:first-of-type {
     font-weight: bold;
     margin-top: 1rem;
+}
+
+@media (max-width: 768px){
+    .container {
+        padding: 5rem 5vw;
+    }
+}
+
+@media (min-width: 768px){
+    .container {
+        padding: 5rem 20vw;
+    }
 }
