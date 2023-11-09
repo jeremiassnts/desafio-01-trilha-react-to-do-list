@@ -1,31 +1,19 @@
-import { useState } from 'react'
 import { Label } from './Label'
 import styles from './Panel.module.css'
 import list from './assets/list.svg'
 import { Item } from './Item';
+import { ItemType } from './Body';
 
-interface Item {
-    id: number;
-    checked: boolean;
-    description: string;
+interface PanelProps {
+    items: Array<ItemType>;
+    handleCheckItem: (id: number) => void
 }
 
-export function Panel() {
-    const [items, setItems] = useState<Array<Item>>([{
-        id: 1,
-        checked: false,
-        description: 'teste'
-    }])
-    function handleCheckItem(id: number) {
-        let itemsCopy = [...items]
-        const index = itemsCopy.findIndex(e => e.id == id)
-        itemsCopy[index].checked = !itemsCopy[index].checked
-        setItems(itemsCopy)
-    }
+export function Panel({ items, handleCheckItem }: PanelProps) {
     return <div className={styles.container}>
         <div className={styles.header}>
-            <Label color='#4EA8DE' text='Tarefas criadas' value='0' />
-            <Label color='#8284FA' text='Concluídas' value='0' />
+            <Label color='#4EA8DE' text='Tarefas criadas' value={items.length.toString()} />
+            <Label color='#8284FA' text='Concluídas' value={`${items.filter(e => e.checked).length} de ${items.length}`} />
         </div>
         {
             items.length == 0 &&

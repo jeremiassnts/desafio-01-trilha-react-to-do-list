@@ -52,3 +52,8 @@
 .search button:hover {
     background-color: var(--blue);
 }
+
+.search button:disabled {
+    background-color: var(--gray-300);
+    cursor: auto;
+}
