@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './Body.module.css'
 import { Panel } from './Panel'
 import plus from './assets/plus.svg'
@@ -19,7 +19,8 @@ export function Body() {
         setItems(itemsCopy)
     }
 
-    function handleCreateItem() {
+    function handleCreateItem(event: FormEvent) {
+        event.preventDefault()
         let newItem: ItemType = {
             id: items.length + 1,
             checked: false,
@@ -40,12 +41,12 @@ export function Body() {
     }
 
     return <div className={styles.container}>
-        <div className={styles.search}>
+        <form className={styles.search} onSubmit={handleCreateItem}>
             <input placeholder='Adicione uma nova tarefa' value={description} onChange={handleDescriptionChange} />
-            <button onClick={handleCreateItem} disabled={description == ""}>
+            <button type='submit' disabled={description == ""}>
                 Criar <img src={plus} />
             </button>
-        </div>
-        <Panel checkItem={handleCheckItem} items={items} deleteItem={handleDeleteItem}/>
+        </form>
+        <Panel checkItem={handleCheckItem} items={items} deleteItem={handleDeleteItem} />
     </div>
 }
