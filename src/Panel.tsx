@@ -6,10 +6,11 @@ import { ItemType } from './Body';
 
 interface PanelProps {
     items: Array<ItemType>;
-    handleCheckItem: (id: number) => void
+    checkItem: (id: number) => void;
+    deleteItem: (id: number) => void;
 }
 
-export function Panel({ items, handleCheckItem }: PanelProps) {
+export function Panel({ items, checkItem, deleteItem }: PanelProps) {
     return <div className={styles.container}>
         <div className={styles.header}>
             <Label color='#4EA8DE' text='Tarefas criadas' value={items.length.toString()} />
@@ -26,7 +27,7 @@ export function Panel({ items, handleCheckItem }: PanelProps) {
         {
             items.length > 0 &&
             <div className={styles.list}>
-                {items.map((item) => <Item checked={item.checked} description={item.description} key={item.id} handleCheck={() => handleCheckItem(item.id)} />)}
+                {items.map((item) => <Item checked={item.checked} description={item.description} key={item.id} handleCheck={() => checkItem(item.id)} deleteItem={() => deleteItem(item.id)} />)}
             </div>
         }
     </div>

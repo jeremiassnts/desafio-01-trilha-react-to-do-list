@@ -34,6 +34,11 @@ export function Body() {
         setDescription(event.target.value)
     }
 
+    function handleDeleteItem(id: number) {
+        let newItems = items.filter(e => e.id != id)
+        setItems(newItems)
+    }
+
     return <div className={styles.container}>
         <div className={styles.search}>
             <input placeholder='Adicione uma nova tarefa' value={description} onChange={handleDescriptionChange} />
@@ -41,6 +46,6 @@ export function Body() {
                 Criar <img src={plus} />
             </button>
         </div>
-        <Panel handleCheckItem={handleCheckItem} items={items} />
+        <Panel checkItem={handleCheckItem} items={items} deleteItem={handleDeleteItem}/>
     </div>
 }
